@@ -1,0 +1,11 @@
+Objeto 1: Caixa de papelão
+Propriedades: Tamanho, Personalização, Qualidade
+Comportamentos: Empacotar cobra, Calcular capacidade, Verificar integridade
+
+Objeto 2: Cobra
+Propriedades: Espécie, Tamanho, Qualidade
+Comportamentos: Mover-se, Mudar de pele, Alimentar-se
+
+Objeto 3: Pedido
+Propriedades: Número de pedido, Cliente, Status
+Comportamentos: Adicionar item, Atualizar status, Gerar fatura
