@@ -1,4 +1,4 @@
-package JFOPratica4;
+package JFOPratica4.Problema1;
 
 public class ComputeMethods {
     public double fToC(double degreesF) {
