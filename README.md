@@ -1,41 +1,41 @@
 ![Java](https://cdn.discordapp.com/attachments/1078453379715575828/1118847196956213318/giphy.gif)
 
-<h1>Curso da Oracle - Java Foundations<h1>
+<h1>Curso da Oracle - Java Foundations</h1>
 
-<p>Nome do Aluno: Leandro Scalabrini
-RA: 32318945
-UC: Programação de Soluções Computacionais
-Data de entrega: fim do semestre
-Valor: A3<p>
+<p>Nome do Aluno: Leandro Scalabrini<p>
+<p>RA: 32318945<p>
+<p>UC: Programação de Soluções Computacionais<p>
+<p>Data de entrega: 27/6/2023<p>
+<p>Valor: A3</p>
 
 <h2>PRÁTICA 2 - JAVA FOUNDATIONS</h2>
 
 
-<h3>Problema 1: Arte ASCII Simples<h3>
+<h3>Problema 1: Arte ASCII Simples</h3>
 
 <p>Explicação: Recriar uma carinha feliz usando arte ASCII com um único caractere, além do espaço.  
-Instruções: Usar oito instruções de impressão para criar a imagem.<p>
+Instruções: Usar oito instruções de impressão para criar a imagem.</p>
 
-<h3>Problema 2: Arte ASCII Original<h3>
+<h3>Problema 2: Arte ASCII Original</h3>
 
 <p>Explicação: Criar uma arte ASCII original usando instruções de impressão.  
 Instruções: Criar uma imagem com pelo menos oito instruções de impressão, ter pelo menos oito caracteres de largura e usar pelo menos 20 caracteres que não sejam espaço. Comentar o que a arte retrata.</p>
 
 <h2>PRÁTICA 3 - JAVA FOUNDATIONS</h2>
-<h3>Problema 1: Criar um Jogo do JavaLibs<h3>
+<h3>Problema 1: Criar um Jogo do JavaLibs</h3>
   
 <p>Explicação:  Criar um programa semelhante ao JavaLibs, onde o usuário fornece entradas para modificar uma história pré-determinada.  
   O programa deve aceitar diferentes tipos de entrada (String, int, double), realizar cálculos e exibir a história resultante.   
   A saída deve ser formatada em várias linhas para facilitar a leitura. O programa deve aceitar pelo menos dez entradas e pode ser desenvolvido no método principal.</p>
 
 <h2>PRÁTICA 4 - JAVA FOUNDATIONS</h2>
-<h3>Problema 1: Métodos de Cálculo<h3>
+<h3>Problema 1: Métodos de Cálculo</h3>
 
 <p>Explicação: Implementar métodos em Java para converter temperatura de Fahrenheit para Celsius, calcular a hipotenusa de um triângulo e simular o lançamento de dois dados de seis lados.  
 Os métodos estão definidos no arquivo ComputeMethods.java.  
-Utilizar o arquivo TestClass.java para criar uma instância da classe ComputeMethods e chamar os métodos, exibindo os resultados.<p>
+Utilizar o arquivo TestClass.java para criar uma instância da classe ComputeMethods e chamar os métodos, exibindo os resultados.</p>
 
-<h3>Problema 2: Processamento de Nome<h3>
+<h3>Problema 2: Processamento de Nome</h3>
 
 <p>Explicação: Desenvolver um programa em Java que processa um nome inserido pelo usuário.  
 Extrair o primeiro e último nomes do nome completo fornecido.  
@@ -43,43 +43,43 @@ Utilizar métodos da classe String para manipular o nome e exibir o sobrenome se
 O programa está implementado no arquivo ProcessName.java.</p>
 
 <h2>PRÁTICA 5 - JAVA FOUNDATIONS</h2>
-<h3>Problema 1: Determinando a cor no espectro visível<h3>
+<h3>Problema 1: Determinando a cor no espectro visível</h3>
 
 <p>Explicação: Criar um programa Java chamado ColorRange.java.  
 Solicitar que o usuário insira um comprimento de onda em nanômetros.  
 Determinar a cor correspondente no espectro visível com base no intervalo de comprimento de onda.  
-Exibir a cor correspondente ou informar se o comprimento de onda está fora do espectro visível.<p>
+Exibir a cor correspondente ou informar se o comprimento de onda está fora do espectro visível.</p>
 
-<h3>Problema 2: Determinando a próxima cor de um sinal de trânsito<h3>
+<h3>Problema 2: Determinando a próxima cor de um sinal de trânsito</h3>
 
 <p>Explicação: Criar um programa Java chamado TrafficLightChecker.java.  
 Solicitar que o usuário insira a cor atual de um sinal de trânsito.  
 Calcular a próxima cor do sinal de trânsito com base na cor atual.  
-Exibir a próxima cor do sinal de trânsito ou informar se a cor inserida é inválida.<p>
+Exibir a próxima cor do sinal de trânsito ou informar se a cor inserida é inválida.</p>
 
-<h3>Problema 3: Determinando a próxima cor de um sinal de trânsito usando switch<h3>
+<h3>Problema 3: Determinando a próxima cor de um sinal de trânsito usando switch</h3>
 
 <p>Explicação: Repetir o Problema 5-2 utilizando a instrução switch em vez de if.  
 Implementar o programa em Java chamado TrafficLightSwitch.java.  
 Alertar o usuário caso uma cor inválida seja inserida.</p>
 
 <h2>PRÁTICA 6 - JAVA FOUNDATIONS</h2>
-<h3>Problema 1: Validando um PIN Bancário<h3>
+<h3>Problema 1: Validando um PIN Bancário</h3>
 
 <p>Explicação: Desenvolver um programa Java que valide um PIN bancário inserido pelo cliente.  
 Usar um loop while para repetir o código até que um PIN válido seja inserido.  
 Comparar o PIN inserido pelo usuário com um PIN válido declarado.  
 Solicitar que o usuário insira o PIN novamente caso ele não seja correto.  
-Exibir uma mensagem confirmando que o PIN correto foi inserido e que o usuário tem acesso à conta.<p>
+Exibir uma mensagem confirmando que o PIN correto foi inserido e que o usuário tem acesso à conta.</p>
 
-<h3>Problema 2: Exibindo Múltiplos de um Número<h3>
+<h3>Problema 2: Exibindo Múltiplos de um Número</h3>
 
 <p>Explicação: Desenvolver um programa Java que exiba os múltiplos de um número inserido pelo usuário.  
 Usar um loop for para calcular e exibir os múltiplos desse número de 1 a 12.  
 Solicitar que o usuário insira um número.  
-Exibir os múltiplos do número inserido multiplicados por cada número de 1 a 12.<p>
+Exibir os múltiplos do número inserido multiplicados por cada número de 1 a 12.</p>
 
-<h3>Problema 3: Arte ASCII Programática<h3>
+<h3>Problema 3: Arte ASCII Programática</h3>
 
 <p>Explicação: Desenvolver um programa Java que desenhe formas básicas de maneira programática.  
 Implementar os métodos createRectangle() e createTriangle() em LoopShape.java.  
@@ -90,7 +90,7 @@ Permitir que o programa desenhe formas 1x1.
 Experimentar diferentes valores de largura, altura e tamanho do triângulo ao chamar os métodos.</p>
 
 <h2>PRÁTICA 7 - JAVA FOUNDATIONS</h2>
-<h3>Problema 1: Um Encontro Noturno no Fliperama<h3>
+<h3>Problema 1: Um Encontro Noturno no Fliperama</h3>
 
 <p>Explicação: Criar um programa Java que modele as propriedades, comportamentos e interações de objetos no fliperama.  
 Modelar os cartões utilizados no fliperama, que armazenam informações como saldo de créditos e saldo de tíquetes.  
@@ -101,7 +101,7 @@ Utilizar um método principal para testar o programa, instanciando cartões e ou
 Resumindo, o programa simula interações e funcionalidades de um fliperama, permitindo a manipulação de cartões, jogos, prêmios e terminais.</p>
 
 <h2>PRÁTICA 8 - JAVA FOUNDATIONS</h2>
-<h3>Problema 1: A Liga de Futebol<h3>
+<h3>Problema 1: A Liga de Futebol</h3>
 
 <p>Explicação: Criar um programa Java que modele uma liga de futebol e controle as estatísticas da temporada.  
 A liga é composta por quatro equipes e os jogos são determinados aleatoriamente.  
