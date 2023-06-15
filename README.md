@@ -2,13 +2,11 @@
 
 <h1>Curso da Oracle - Java Foundations<h1>
 
-```
-Nome do Aluno: Leandro Scalabrini
+<p>Nome do Aluno: Leandro Scalabrini
 RA: 32318945
 UC: Programação de Soluções Computacionais
 Data de entrega: fim do semestre
-Valor: A3
-```
+Valor: A3<p>
 
 <h2>PRÁTICA 2 - JAVA FOUNDATIONS</h2>
 
