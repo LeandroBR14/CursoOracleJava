@@ -7,7 +7,7 @@ Nome do Aluno: Leandro Scalabrini
 RA: 32318945
 UC: Programação de Soluções Computacionais
 Data de entrega: fim do semestre
-Valor: 
+Valor: A3
 ```
 
 <h2>PRÁTICA 2 - JAVA FOUNDATIONS</h2>
