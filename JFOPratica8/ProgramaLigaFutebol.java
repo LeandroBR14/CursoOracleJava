@@ -1,55 +1,100 @@
 package JFOPratica8;
 
-import java.util.Random;
+import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class ProgramaLigaFutebol {
     public static void main(String[] args) {
-        Equipe barcelona = new Equipe();
-        Equipe realmadrid = new Equipe();
-        Equipe valladolid = new Equipe();
-        Equipe valencia = new Equipe();
+        
+        int jogosPorSemana = 0;
 
-        barcelona.setNome("Barcelona");
-        realmadrid.setNome("Real Madrid");
-        valladolid.setNome("Valladolid");
-        valencia.setNome("Valencia");
+        ArrayList<Time> equipes = new ArrayList<>();
 
-        LigaFutebol liga = new LigaFutebol();
+        try (Scanner input = new Scanner(System.in)) {
 
-        Scanner teclado = new Scanner(System.in);
 
-        double temperatura = 0;
-        int p1 = 0;
-        int p2 = 0;
-        do {
-            System.out.print("Digite a temperatura da semana:");
-            temperatura = teclado.nextDouble();
-            System.out.print("Digite o placar do time 1:");
-            p1 = teclado.nextInt();
-            System.out.print("Digite o placar do time 2:");
-            p2 = teclado.nextInt();
+            while (jogosPorSemana < 3) {
 
-            Jogo jogoSemana = new Jogo();
-            jogoSemana.setPlacarTime1(p1);
-            jogoSemana.setPlacarTime2(p2);
-            jogoSemana.setTemperatura(temperatura);
+                System.out.println("---PARA ENCERRAR DIGITE VALORES NEGATIVOS---");
+                System.out.println("    ---OU VALORES ACIMA DE 40 GRAUS---\n");
+                System.out.println("Digite a temperatura da semana: ");
 
-            liga.tabelaDeJogos.add(jogoSemana);
+                double temperaturaDaSemana = input.nextDouble();
 
-        } while (temperatura > 0);
+                if (temperaturaDaSemana < 0 || temperaturaDaSemana > 40) { break; }
 
-        Jogo jogoDeAbertura = new Jogo();
+                if (temperaturaDaSemana <= 0) { jogosPorSemana++; } 
 
-        jogoDeAbertura.setTemperatura(30);
-        jogoDeAbertura.setTime1(barcelona);
-        jogoDeAbertura.setTime2(realmadrid);
-        jogoDeAbertura.setPlacarTime1(5);
-        jogoDeAbertura.setPlacarTime2(0);
+                else {
+                    jogosPorSemana = 0;
 
-        liga.tabelaDeJogos.add(jogoDeAbertura);
+                    if (temperaturaDaSemana >= 20) {
+                        String equipeA = Time.gerarEquipeAleatoria();
+                        String equipeB = Time.gerarEquipeAleatoria();
 
-        System.out.println(jogoDeAbertura.getTime1().getNome() + " " + jogoDeAbertura.getPlacarTime1() + " x " + jogoDeAbertura.getPlacarTime2() + " " + jogoDeAbertura.getTime2().getNome()); 
+                        while (equipeA.equals(equipeB)) {
+                            equipeB = Time.gerarEquipeAleatoria();
+                        }
+
+                        Jogo jogoDeFutebol = new Jogo(equipeA, equipeB, temperaturaDaSemana);
+                        equipes.add(jogoDeFutebol.getEquipe1());
+                        equipes.add(jogoDeFutebol.getEquipe2());
+                    }
+
+                }
+
+            }
+
+        } catch(IllegalArgumentException e){
+            String excecao = "Valores digitados inválidos, a temporada está encerrada. ";
+            JOptionPane.showMessageDialog(null, excecao);
+        }
+
+
+        ArrayList<Jogo> temporadaAtual = Jogo.getTemporada();
+        equipes.sort(Time.ComparadorNomeDasEquipes);
+
+        for (Jogo partida : temporadaAtual) {
+            partida.imprimirEstatisticas();
+        }
+
+        System.out.println("Estatísticas Gerais das Equipes:");
+        Time equipeAtual = null;
+
+        for (Time equipe : equipes) {
+            if (equipeAtual == null || !equipe.getNomeDoTime().equals(equipeAtual.getNomeDoTime())) {
+
+                if (equipeAtual != null) {
+                    equipeAtual.imprimirEstatisticas();
+                }
+                equipeAtual = equipe;
+            } 
+            else {
+                equipeAtual.atualizarEstatisticas(equipe.getGolsMarcados(), equipe.getGolsSofridos());
+            }
+        }
+        
+        if (equipeAtual != null) {
+            equipeAtual.imprimirEstatisticas();
+        }
+
+        double temperaturaMaisQuente = 0.0;
+        double temperaturaTotal = 0.0;
+
+        for (Jogo partida : temporadaAtual) {
+            temperaturaTotal += partida.getTemperatura();
+            if (partida.getTemperatura() > temperaturaMaisQuente) {
+                temperaturaMaisQuente = partida.getTemperatura();
+            }
+        }
+
+        double temperaturaMedia = temperaturaTotal / temporadaAtual.size();
+
+        System.out.printf("Temperatura mais quente: %.1f\n", temperaturaMaisQuente);
+        System.out.printf("Temperatura média: %.1f\n", temperaturaMedia);
+
     }
+
 
 }
