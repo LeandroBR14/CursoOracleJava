@@ -1,26 +1,53 @@
 package JFOPratica7;
 
+import java.util.Random;
+
 public class Jogo {
+
+    private String nomeDoJogo;
     private int creditosNecessarios;
-    private int numTickets;
+    private boolean chanceDeNaoGanharTickets;
 
-    public Jogo(int creditosNecessarios) {
+    public Jogo(String nomeDoJogo, int creditosNecessarios, boolean chanceDeNaoGanharTickets){
+        this.nomeDoJogo = nomeDoJogo;
         this.creditosNecessarios = creditosNecessarios;
+        this.chanceDeNaoGanharTickets = chanceDeNaoGanharTickets;
     }
 
-    public int getCreditosNecessarios() {
-        return creditosNecessarios;
+    private int gerarNumeroAleatorioDeTickets() {
+        Random ticketsAleatorios = new Random();
+
+        if (chanceDeNaoGanharTickets) {
+
+            int chanceDeGanharTickets = ticketsAleatorios.nextInt(20); 
+
+            if (chanceDeGanharTickets < 10) {
+                return ticketsAleatorios.nextInt(20) + 1; 
+            } else { return 0; }
+            
+        } else { return ticketsAleatorios.nextInt(20) + 1; }
+
     }
 
-    public int jogar(Cartao cartao) {
-        if (cartao.getSaldoCredito() >= creditosNecessarios) {
-            cartao.deduzirCredito(creditosNecessarios);
-            numTickets = (int) (Math.random() * 100);
-            cartao.adicionarTickets(numTickets);
-            return numTickets;
-        } else {
-            System.out.println("Créditos insuficientes para jogar.");
-            return 0;
+    public void jogar(Cartao cartao){
+
+        if(cartao.getSaldoDeCredito() >= creditosNecessarios){
+            
+            cartao.reduzirSaldoDeCredito(creditosNecessarios);
+
+            int ticketsGanhos = gerarNumeroAleatorioDeTickets();
+            cartao.adicionarSaldoDeTickets(ticketsGanhos);
+
+            System.out.printf("\nJogo: %s\n", nomeDoJogo);
+            System.out.printf("Número do Cartão: %d\n", cartao.getNumeroDoCartao());
+            System.out.printf("Tickets Ganhos: %d\n", ticketsGanhos);
+            System.out.printf("Novo Saldo de Tickets: %d\n", cartao.getSaldoDeTickets());
+        } else{
+            System.out.println("Erro: Créditos insuficientes para jogar o jogo.");
         }
+
     }
+
+    public String getNomeDoJogo() {return nomeDoJogo;}
 }
+

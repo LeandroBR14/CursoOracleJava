@@ -1,46 +1,71 @@
 package JFOPratica7;
 
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+
 public class Cartao {
-    private int numeroCartao;
-    private double saldoCredito;
-    private int saldoTickets;
 
-    public Cartao(int numeroCartao) {
-        this.numeroCartao = numeroCartao;
-        this.saldoCredito = 0.0;
-        this.saldoTickets = 0;
+    private int numeroDoCartao;
+    private double saldoDeCredito;
+    private int saldoDeTickets;
+    
+    private static Set<Integer> numerosDeCartaoUtilizados = new HashSet<>();
+
+    public Cartao(){
+        this.saldoDeCredito = 0.0;
+        this.saldoDeTickets = 0;
+        gerarNumeroDoCartaoUnico();
     }
 
-    public int getNumeroCartao() {
-        return numeroCartao;
+    private void gerarNumeroDoCartaoUnico(){
+
+        Random numeroGerado = new Random();
+        int numero;
+        do{
+            numero = numeroGerado.nextInt(900) + 100;
+        } while (numerosDeCartaoUtilizados.contains(numero));
+
+        numerosDeCartaoUtilizados.add(numero);
+        numeroDoCartao = numero;
     }
 
-    public double getSaldoCredito() {
-        return saldoCredito;
+
+    public static Cartao criarCartao(){
+        Cartao cartao = new Cartao();
+        return cartao;
     }
 
-    public int getSaldoTickets() {
-        return saldoTickets;
+    
+    public double getSaldoDeCredito() {return saldoDeCredito;}
+    public int getSaldoDeTickets() {return saldoDeTickets;}
+    public int getNumeroDoCartao() {return numeroDoCartao;}
+
+
+    public void adicionarSaldoDeCredito(double valor) {
+        saldoDeCredito += valor;
+    }
+    
+    public void adicionarSaldoDeTickets(int quantidade) {
+        saldoDeTickets += quantidade;
+    }
+    
+    public void reduzirSaldoDeCredito(double valor) {
+        if (saldoDeCredito >= valor) {
+            saldoDeCredito -= valor;
+        } else {
+            System.out.println("Erro: Crédito insuficiente para redução.");
+        }
+    }
+    
+    
+    public void reduzirSaldoDeTickets(int quantidade) {
+
+        if (saldoDeTickets >= quantidade)  {
+        saldoDeTickets -= quantidade;
+        } else {
+            System.out.println("Erro: Tickets insuficientes para redução.");
+        }
     }
 
-    public void adicionarCredito(double valor) {
-        saldoCredito += valor;
-    }
-
-    public void adicionarTickets(int quantidade) {
-        saldoTickets += quantidade;
-    }
-
-    public void deduzirCredito(double valor) {
-        saldoCredito -= valor;
-    }
-
-    public void deduzirTickets(int quantidade) {
-        saldoTickets -= quantidade;
-    }
 }
-
-
-
-
-
